@@ -226,6 +226,13 @@ ul#transaction-list {
     padding:20px;
 }
 
+.chart-section h2{
+    margin-top:0;
+    margin-bottom:16px;
+    padding-bottom:10px;
+    border-bottom:1px solid #e5e7eb;
+}
+
 .chart-section canvas{
 max-width:320px;
 margin:auto;
