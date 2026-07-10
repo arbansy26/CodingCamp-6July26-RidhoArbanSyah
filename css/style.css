@@ -1,0 +1,165 @@
+/* ==========================================================================
+   2.1 Base reset and body styles
+   Requirements: 7.3
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  background: #f9fafb;
+  color: #1f2937;
+  margin: 0;
+}
+
+/* ==========================================================================
+   2.2 Two-column grid layout
+   Requirements: 7.1
+   ========================================================================== */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.balance-section {
+  grid-column: 1 / -1;
+}
+
+.form-section {
+  grid-column: 1;
+}
+
+.chart-section {
+  grid-column: 2;
+}
+
+.list-section {
+  grid-column: 1 / -1;
+}
+
+/* ==========================================================================
+   2.3 Mobile responsive breakpoint at 600px
+   Requirements: 7.2
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .balance-section,
+  .form-section,
+  .chart-section,
+  .list-section {
+    grid-column: 1;
+  }
+}
+
+/* ==========================================================================
+   2.4 Form, list, chart, and balance component styles
+   Requirements: 7.1, 7.3, 2.2
+   ========================================================================== */
+
+/* Form fields */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select {
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  padding: 10px 16px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background: #1d4ed8;
+}
+
+/* Inline validation error */
+.error {
+  color: #dc2626;
+  font-size: 14px;
+}
+
+/* Balance display */
+#balance-display {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Transaction list */
+ul#transaction-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+ul#transaction-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Delete button */
+.delete-btn {
+  padding: 4px 8px;
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: auto;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* Storage error banner */
+.error-banner {
+  background: #fef2f2;
+  color: #991b1b;
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+/* Empty state message */
+.empty-msg {
+  color: #6b7280;
+  font-style: italic;
+}
